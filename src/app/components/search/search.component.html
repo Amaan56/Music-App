@@ -1,3 +1,25 @@
-<p>
-  search works!
-</p>
+<div class="container">
+  <br>
+  <h1>Need Movies Info?</h1>
+  <p class="lead"> Use this app to browse movies of all time!!!</p>
+  <form>
+    <div class="form-group">
+      <input class="form-control" placeholder="Enter the movie name" name="searchStr" 
+      [(ngModel)]="searchStr" (keyup) = "searchMovie()" type="text">
+    </div>
+  </form>
+  <hr>
+  <div *ngIf="dataArr" class="container">
+    <div class="row" >
+      <div class = "col-3" *ngFor="let movie of dataArr">
+        <div class="card">
+            <img class="card-img-top" src="{{movie.Poster}}" >
+            <div class="card-body">
+                <h5 class="card-title">{{movie.Title}}</h5>
+              </div>
+         <h4></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
